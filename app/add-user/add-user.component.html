@@ -1,0 +1,46 @@
+
+<nav class="navbar navbar-dark bg-dark">
+  <button class="btn btn-danger" (click)='back()'><a class="navbar-brand" >Back</a></button> 
+  <button class="btn btn-primary" (click)="addUser()"><a class="navbar-brand" >Create</a></button> 
+ </nav>
+
+<form action=""> 
+<div class="row">
+ <div class="col-sm-5">
+   <label>First name:</label>
+   <input type="text" class="form-control" placeholder="First name" name="fname" [(ngModel)]='fname'>
+ </div>
+ <div class="col-sm-5">
+   <label >Last name:</label>
+   <input type="text" class="form-control" placeholder="Last name" name="lname" [(ngModel)]='lname'>
+ </div>
+</div>
+
+   <div class="row">
+     <div class="col-sm-2">
+       <label >Age:</label>
+       <input type="text" class="form-control" placeholder="Age" name="age1" [(ngModel)]='age'>
+     </div>
+     <div class="col-sm-2">
+       <label >Email:</label>
+       <fieldset disabled> <input type="text" class="form-control" placeholder={{fname}}{{lname}}@gmail.com></fieldset>
+     </div>
+   </div>
+   <div class="row">
+      
+    <div class="col-sm-4">
+      <div> 
+       <img class="image" id="profile" src="{{pic}}" alt="img" (click)='showavtar=!showavtar'>
+       <button class="btn btn-warning" (click)='showavtar=!showavtar'>Change Avtar</button>
+         <div *ngIf="showavtar"> 
+             <div class="col-sm-3" *ngFor='let i of objAvtar'>
+              <img class="image" src="{{i.a}}" (click)='changePic(i.a)'>
+             </div>
+       </div>
+      
+   </div>
+ </div>
+</div>
+</form>
+
+ 
