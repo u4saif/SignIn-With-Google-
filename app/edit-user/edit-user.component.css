@@ -1,0 +1,29 @@
+.image-col {
+    text-align:center;
+}
+ .image {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+}
+    
+.btn{
+    margin: 10px;
+}
+
+.row{
+    padding: 5px 40px;
+}
+
+.form-control{
+    margin: 10px 10px;
+}
+
+.column{
+   float: left;
+}
+
+
+.navbar{
+    width: 100%;
+}

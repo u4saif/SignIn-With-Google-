@@ -1,0 +1,55 @@
+
+<div class="top">
+    <nav class="navbar navbar-dark" style="background-color: #103755ca">
+
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2" type="search" placeholder='search' aria-label="Search">
+        <button class="btn btn-primary" routerLink="./adduser"><a class="btn my-sm-0" >Create User</a></button>
+
+      </form>
+       
+       
+      
+        <h6>Hello👋  {{profilename}}</h6>
+          <span *ngIf="profilePic"> 
+        <img class="image" width='50px' height="50px" src= {{profilePic}}>
+          </span>
+          <span *ngIf="!profilePic"> 
+            <img class="image" width='50px' height="50px" src="https://firebasestorage.googleapis.com/v0/b/pro-crud.appspot.com/o/avtar%2Fg4.png?alt=media&token=033f015a-ed88-4e3e-a4d8-31b541a5f808">
+          </span>
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="button" (click)='logout()'>SignOut</button> 
+    </nav>
+  </div>
+  <div class="list-group users-list">
+    <div *ngFor='let u of users |async' class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="row">
+        <div class="col col-md-2 image-col">
+          <img class="image" src={{u.data.pic}}>
+        </div>
+        <div class="col col-md-8 text-col">
+          <h5 class="mb-1"> Name: {{u.data.fname}}-{{u.data.lname}}</h5>
+          <p class="mb-1" >User ID: {{u.data.age}} </p>
+          <h5 class="mb-">Email: {{u.data.email}}</h5>
+        </div>
+        <div class="col col-md-2 actions-col">
+          <button  (click)='getId(u)'  class="btn btn-primary">View Details</button>
+          <button  (click)='editId(u)' class="btn btn-outline-success action">Edit Details</button>
+          <button  (click)='delete(u)'  class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  
+  <!-- Footer -->
+  <footer class="page-footer font-small blue">
+  
+    <!-- Copyright -->
+    <div  class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="mailto:u4saif@gmail.com"> u4saif@gmail.com</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->

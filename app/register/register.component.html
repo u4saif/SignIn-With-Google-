@@ -1,0 +1,35 @@
+
+<div class="container">
+    <form >
+      <div class="row">
+  
+        <div class="col">
+          
+             
+          <input id="fname" type="text"  placeholder="First Name"  ngModel #fname=ngModel name="fname" required (change)='fnamechange(fname)'>
+          <div *ngIf='fname.touched && !fname.value' class="alert alert-danger">
+            First name required 
+          </div>
+          <input id="lname" type="text" name="lname" placeholder="Last Name"  ngModel #lname='ngModel' required (change)='lnamechange(lname)'>
+          <div *ngIf='lname.touched && !lname.value' class="alert alert-danger">
+            Last name required 
+          </div>
+       
+          <input id="username" type="text" name="username" placeholder="Email" ngModel #username="ngModel" required (change)='emailchange(username)'>
+          <div *ngIf='username.touched && !username.value' class="alert alert-danger">
+            Email required 
+          </div>
+
+          <input type="password" name="password" placeholder="Password"  id="password" ngModel #password='ngModel' required (change)='passwordchange(password)'>
+          <div *ngIf='password.touched && !password.value' class="alert alert-danger">
+            Password required 
+          </div>
+
+          <button type="submit" (click)='login()' class="btn btn-primary"  [disabled]='!fname.viewModel'>Register & Login </button>
+          <a  (click)='back()' class="google btn"><i class="fa fa-google fa-fw">
+        </i> Back to login Page
+      </a>
+        </div>
+        
+      </div>
+    </form>

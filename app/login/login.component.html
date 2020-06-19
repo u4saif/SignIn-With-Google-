@@ -1,0 +1,37 @@
+
+<div class="container">
+    <form >
+      <div class="row">
+  
+        <div class="col">
+          <input id="username" type="text" name="username" placeholder="Username"  ngModel #username='ngModel' required (change)='email(username)'>
+          <div *ngIf='username.touched && !username.value' class="invalid-feedback d-block" >
+         Email is required 
+          </div>
+
+          <input type="password" name="password" placeholder="Password"  id="password" ngModel #password='ngModel' required (change)='pass(password)'>
+          <div *ngIf='password.touched && !password.value' class="invalid-feedback d-block" >
+            Password is required 
+             </div>
+          
+          <input type="submit" (click)='login()' value="Login">
+          <a  (click)='googleSignin()' class="google btn"><i class="fa fa-google fa-fw">
+        </i> Login with Google+
+      </a>
+        </div>
+        
+      </div>
+    </form>
+  </div>
+  
+  <div class="bottom-container">
+    <div class="row">
+      <div class="col">
+        <a href="register" style="color:white" class="btn">Sign up</a>
+      </div>
+      <div class="col">
+        <a href="#" style="color:white" class="btn">Forgot password?</a>
+      </div>
+    </div>
+  </div>
+  
