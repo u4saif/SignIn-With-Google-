@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "f4auth": {
+      "hosting": {
+        "testLogin": [
+          "f4auth"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "youareadmin"
+  }
+}
